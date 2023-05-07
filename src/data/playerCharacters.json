@@ -1,0 +1,72 @@
+[{
+    "id" : 0,
+    "name" : "הלוחם",
+
+    "attributes" : {
+        "strength" : 18,
+        "dexterity:": 14,
+        "constitution": 16,
+        "wisdom": 13,
+        "intelligence": 10,
+        "charisma": 12
+    },
+
+    "hitDie": 10,
+    "hitPoints": 39,
+    "armorClass": 18,
+
+    "attacks": [
+        {
+            "name":"Greatsword",
+            "attackRollBonus": 5,
+            "dieValue": 6,
+            "dieAmount": 2,
+            "damageType": "slashing"
+        },
+        {
+            "name":"Longbow",
+            "attackRollBonus": 3,
+            "dieValue": 1,
+            "dieAmount": 8,
+            "damageType": "slashing"
+        }
+    
+    ]
+},
+{
+    "id" : 1,
+    "name" : "היסודאי",
+
+    "attributes" : {
+        "strength" : 8,
+        "dexterity:": 14,
+        "constitution": 16,
+        "wisdom": 18,
+        "intelligence": 18,
+        "charisma": 10
+    },
+
+    "hitDie": 10,
+    "hitPoints": 39,
+    "armorClass": 18,
+
+    "attacks": [
+        {
+            "name":"Greatsword",
+            "attackRollBonus": 5,
+            "dieValue": 6,
+            "dieAmount": 2,
+            "damageType": "slashing"
+        },
+        {
+            "name":"Longbow",
+            "attackRollBonus": 3,
+            "dieValue": 1,
+            "dieAmount": 8,
+            "damageType": "slashing"
+        }
+    
+    ]
+}
+
+]

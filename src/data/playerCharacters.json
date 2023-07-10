@@ -2,14 +2,32 @@
     "id" : 0,
     "name" : "הלוחם",
 
-    "attributes" : {
-        "עוצמה" : 18,
-        "זריזות:": 14,
-        "חוסן": 16,
-        "חוכמה": 13,
-        "תבונה": 10,
-        "כריזמה": 12
-    },
+    "attributes" : [
+        {   "attributeNameEn" : "Strength",
+            "attributeValue" : 18,
+            "attributeNameHe" : "עוצמה"
+        },
+        {   "attributeNameEn" : "Dexterity",
+        "attributeValue" : 14,
+        "attributeNameHe" : "זריזות"
+        },
+        {   "attributeNameEn" : "Constitution",
+        "attributeValue" : 16,
+        "attributeNameHe" : "חוסן"
+        },
+        {   "attributeNameEn" : "Intelligence",
+        "attributeValue" : 13,
+        "attributeNameHe" : "חוכמה"
+        },
+        {   "attributeNameEn" : "Wisdom",
+        "attributeValue" : 10,
+        "attributeNameHe" : "תבונה"
+        },
+        {   "attributeNameEn" : "Charisma",
+        "attributeValue" : 12,
+        "attributeNameHe" : "כריזמה"
+        }
+    ],
 
     "hitDie": 10,
     "hitPoints": 39,
@@ -21,14 +39,16 @@
             "attackRollBonus": 5,
             "dieValue": 6,
             "dieAmount": 2,
-            "damageType": "slashing"
+            "damageType": "slashing",
+            "modifierAttribute" : "Strength"
         },
         {
             "name":"פילאם",
             "attackRollBonus": 3,
-            "dieValue": 1,
-            "dieAmount": 8,
-            "damageType": "slashing"
+            "dieValue": 8,
+            "dieAmount": 1,
+            "damageType": "slashing",
+            "modifierAttribute" : "Dexterity"
         }
     
     ]
@@ -37,15 +57,32 @@
     "id" : 1,
     "name" : "היסודאי",
 
-    "attributes" : {
-        "עוצמה" : 8,
-        "זריזות": 14,
-        "חוסן": 16,
-        "חוכמה": 18,
-        "תבונה": 18,
-        "כריזמה": 10
-    },
-
+    "attributes" : [
+        {   "attributeNameEn" : "Strength",
+            "attributeValue" : 8,
+            "attributeNameHe" : "עוצמה"
+        },
+        {   "attributeNameEn" : "Dexterity",
+        "attributeValue" : 12,
+        "attributeNameHe" : "זריזות"
+        },
+        {   "attributeNameEn" : "Constitution",
+        "attributeValue" : 14,
+        "attributeNameHe" : "חוסן"
+        },
+        {   "attributeNameEn" : "Intelligence",
+        "attributeValue" : 18,
+        "attributeNameHe" : "חוכמה"
+        },
+        {   "attributeNameEn" : "Wisdom",
+        "attributeValue" : 16,
+        "attributeNameHe" : "תבונה"
+        },
+        {   "attributeNameEn" : "Charisma",
+        "attributeValue" : 12,
+        "attributeNameHe" : "כריזמה"
+        }
+    ],
     "hitDie": 10,
     "hitPoints": 39,
     "armorClass": 18,
@@ -56,14 +93,16 @@
             "attackRollBonus": 5,
             "dieValue": 6,
             "dieAmount": 2,
-            "damageType": "slashing"
+            "damageType": "slashing",
+            "modifierAttribute" : "Intelligence"
         },
         {
             "name":"רוח מרפא",
             "attackRollBonus": 3,
-            "dieValue": 1,
-            "dieAmount": 8,
-            "damageType": "slashing"
+            "dieValue": 8,
+            "dieAmount": 1,
+            "damageType": "slashing",
+            "modifierAttribute" : "Wisdom"
         }
     
     ]

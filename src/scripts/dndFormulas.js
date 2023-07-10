@@ -1,6 +1,7 @@
 export default {
     calcAttributeModifier,
-    rollAttack
+    rollAttack,
+    rollDamage
 }
 
 function calcAttributeModifier(attributeVal) {
@@ -8,19 +9,36 @@ function calcAttributeModifier(attributeVal) {
 }
 
 function rollAttack(attackModifier) {
- let roll =  _roll1d20();
- let rollTotal = roll + attackModifier
-    
- return {
-    roll,
-    rollTotal
- }
+    let roll =  _rollDie(20);
+    let rollTotal = roll + attackModifier
+
+    return {
+        roll,
+        rollTotal
+    }
 }
 
-function rollDamage(damageModifier) {
+function rollDamage(dieValue, dieAmount, modifier, isCrit = false) {
+    let damageCount = 0;
+    let rolls = [];
 
+    if (isCrit) {
+        dieAmount = dieAmount * 2
+    }
+
+    for (let i = 1; i <= dieAmount; i++) {
+        let rollResult = _rollDie(dieValue);
+        damageCount += rollResult;
+        rolls.push(rollResult);
+    }
+
+    return {
+        rolls,
+        damageCount, 
+        total : damageCount + modifier
+    }
 }
 
-function _roll1d20() {
-    Math.floor(1 + Math.random() * 20);
+function _rollDie(dieMaxValue) {
+    return Math.floor(1 + Math.random() * dieMaxValue);
 }

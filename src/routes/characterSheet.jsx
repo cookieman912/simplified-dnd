@@ -18,6 +18,26 @@ export default function CharacterSheet() {
         setdiceRoll(' מתקפה! גלגת ' + roll.roll + ' לסה"כ של ' + roll.rollTotal)
     }
 
+    function rollDamage(dieValue, dieAmount, modifier) {
+        let damageRoll = dndFormulas.rollDamage(dieValue, dieAmount, modifier)
+        let diceRollString = 'במתקפה יצא בגלגולים ';
+        damageRoll.rolls.forEach(roll => {
+            diceRollString += roll + ","
+        });
+        diceRollString = diceRollString.substring(0, diceRollString.length - 1);
+        diceRollString += ' שביחד שווה ' + damageRoll.damageCount + ' ';
+        diceRollString += ' בהוספה של הבונוס ' + modifier + ' ';
+        diceRollString += 'הגענו לסה"כ של ' +  damageRoll.total;
+        setdiceRoll(diceRollString)
+    }
+
+    function getAttributeModifier(character, desiredAttribute) {
+        let attributeToFind = character.attributes.find(attribute => {
+           return attribute.attributeNameEn === desiredAttribute
+        });
+        return  dndFormulas.calcAttributeModifier(attributeToFind.attributeValue)
+    }
+
     return (
         <>
         <Header></Header>
@@ -29,11 +49,11 @@ export default function CharacterSheet() {
 
         <section className="character-attributes">
             <ul className="attribute-list">
-            {Object.keys(characterSheet.attributes).map(attributeName => {
+            {characterSheet.attributes.map(attribute => {
                 return <li>
-                    <div className="attribute-name">{attributeName}</div>
-                    <div className="attribute-value">{characterSheet.attributes[attributeName]}</div>
-                    <div className="attribute-mod">{ dndFormulas.calcAttributeModifier(characterSheet.attributes[attributeName])}</div>
+                    <div className="attribute-name">{attribute.attributeNameHe}</div>
+                    <div className="attribute-value">{attribute.attributeValue}</div>
+                    <div className="attribute-mod">{ dndFormulas.calcAttributeModifier(attribute.attributeValue)}</div>
                 </li>
             })}
             </ul>   
@@ -55,11 +75,21 @@ export default function CharacterSheet() {
 
         <section  className="character-attacks">
             {characterSheet.attacks.map(attack => {
-                return <div class="attackRoll">
-                    <div className="attack-name">{attack.name}</div>
-                    <div className="attack-roll">קוביית 1ק20 בעוד {attack.attackRollBonus}</div>
-                    <button className="attack-button" onClick={() => rollAttack(attack.attackRollBonus)}>!תקוף</button>
-                </div>
+                return (
+                <div class="attackDamageContainer">
+                    <div className="attack-roll-container">
+                        <div className="attack-name">{attack.name}</div>
+                        <div className="attack-roll">קוביית 1ק20 בעוד {attack.attackRollBonus}</div>
+                        <button className="attack-button" onClick={() => rollAttack(attack.attackRollBonus)}>!תקוף</button>    
+                    </div>
+
+                    <div className="attack-roll-container">
+                        <div className="attack-name">נזק</div>
+                        <div className="attack-roll">{attack.dieValue}ק{attack.dieAmount}+{getAttributeModifier(characterSheet, attack.modifierAttribute)}</div>
+                        <button className="attack-button" onClick={() => rollDamage(attack.dieValue,attack.dieAmount,getAttributeModifier(characterSheet, attack.modifierAttribute)  )}>!נזק</button>    
+                    </div>
+                    
+                </div>);
             })}
         </section>
 

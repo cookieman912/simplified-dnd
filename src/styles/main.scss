@@ -1,0 +1,31 @@
+// Variables
+$background_black : rgb(50, 50, 50);
+$simplified_red : rgb(111, 21, 21);
+
+// Fonts
+@font-face {
+    font-family: hebrew-font;
+    src: url('../assets/fonts/makabiyg/makabiyg/makabiyg-webfont.woff')
+}
+
+@font-face {
+    font-family: english-font;
+    src: url('../assets/fonts/dragon-hunter-font/DragonHunter-9Ynxj.otf') 
+}
+
+// General, app-wide styling
+* {
+    direction: ltr;
+    font-family: 'hebrew-font, english-font';
+    font-size: 18px;
+}
+
+body {
+    background-color: $background_black ;
+    color: white;
+}
+
+
+
+// Imports
+@import  './cmps/header.scss';

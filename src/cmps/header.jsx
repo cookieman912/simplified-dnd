@@ -4,7 +4,10 @@ export default function Header() {
 
     return (
     <header className="main-header">
-        <h1>Simplified!</h1>
+    <div className="title-container">
+        <p className="main-title">מבוכים ודרקונים</p>
+        <p className="secondary title">הגרסה המפושטת</p>
+    </div> 
     </header>     
     )
 }

@@ -4,11 +4,16 @@ import CharacterPreview from "../cmps/characterPreview";
 import Header from "../cmps/header";
 import "../styles/main.scss"
 
-export default function Root() {
+export default function CharacterList() {
     return (
         <>
             <Header></Header>
             <main>
+                <grid className="character-cards">
+                    {playerCharacters.map(playerCharacter => {
+                        return <CharacterPreview character={playerCharacter}></CharacterPreview>
+                    })}
+                </grid>
             </main>
         </>
     );

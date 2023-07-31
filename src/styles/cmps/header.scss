@@ -1,5 +1,7 @@
 .main-header {
     background-color: black;
+    display: flex;
+    justify-content: space-between;
     
     p {
         margin: 0px;
@@ -15,5 +17,15 @@
         align-items: center;
         width: fit-content;
         margin-left: 15px;
+    }
+
+    .main-nav {
+        margin-inline-end: 15px;
+    }
+
+    .main-nav ul {
+        display : flex;
+        list-style-type: none;
+        column-gap: 15px;
     }
 }

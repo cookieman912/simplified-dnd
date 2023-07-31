@@ -27,5 +27,8 @@ body {
 
 
 
-// Imports
+// genral-imports
+@import './cmps/basic-styles.scss';
+
+// components
 @import  './cmps/header.scss';

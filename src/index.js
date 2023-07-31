@@ -10,6 +10,7 @@ import './index.css';
 import Root from './routes/root';
 
 import CharacterSheet from './routes/characterSheet';
+import CharacterList from './routes/characterList';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: '/character-sheet/:id',
     element: <CharacterSheet/>
+  },
+  {
+    path: '/characters',
+    element: <CharacterList/>
   }
 ]);
 

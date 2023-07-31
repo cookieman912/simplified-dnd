@@ -9,7 +9,7 @@ function calcAttributeModifier(attributeVal) {
 }
 
 function rollAttack(attackModifier) {
-    let roll =  _rollDie(20);
+    let roll = _rollDie(20);
     let rollTotal = roll + attackModifier
 
     return {
@@ -34,8 +34,8 @@ function rollDamage(dieValue, dieAmount, modifier, isCrit = false) {
 
     return {
         rolls,
-        damageCount, 
-        total : damageCount + modifier
+        damageCount,
+        total: damageCount + modifier
     }
 }
 

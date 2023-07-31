@@ -10,8 +10,9 @@ import Header from "../cmps/header";
 export default function CharacterSheet() {
 
     let charId = useParams().id;
-    let characterSheet = playerCharacters[charId];
+    const [characterSheet, setCharacterSheet] = useState(playerCharacters[charId])
     const [diceRoll, setdiceRoll] = useState('');
+    const [currHitPoints, setCurrHitPoints] = useState(5)
 
     function rollAttack(modifier) {
         let roll = dndFormulas.rollAttack(modifier)
@@ -38,22 +39,59 @@ export default function CharacterSheet() {
         return dndFormulas.calcAttributeModifier(attributeToFind.attributeValue)
     }
 
+    function onGeneralInfoChange(event) {
+        console.log(event);
+        let value = event.target.value;
+        let attributeToChange = event.target.className.substring(10);
+        let newSheet = JSON.parse(JSON.stringify(characterSheet))
+
+        for (const property in characterSheet) {
+            if (property == attributeToChange) {
+                newSheet[property] = value
+            }
+        }
+        setCharacterSheet(newSheet)
+    }
+
+    console.log(characterSheet);
     return (
         <>
             <Header></Header>
             <main>
                 <grid className="character-cards">
                     <section className='character-general-info'>
-                        <h1>{characterSheet.name}</h1>
+                        <div className="character-general-info-node">
+                            <p>שם דמות</p>
+                            <input type="text" className="character-name" value={characterSheet.name} onChange={onGeneralInfoChange}></input>
+                        </div>
+                        <div className="character-general-info-node">
+                            <p>מקצוע</p>
+                            <input type="text" className="character-class" value={characterSheet.class} onChange={onGeneralInfoChange}></input>
+                        </div>
+                        <div className="character-general-info-node">
+                            <p>רקע</p>
+                            <input type="text" className="character-class" value={characterSheet.background} onChange={onGeneralInfoChange}></input>
+                        </div>
+                        <div className="character-general-info-node">
+                            <p>רמה</p>
+                            <input type="number" className="character-level" value={characterSheet.level} onChange={onGeneralInfoChange}></input>
+                        </div>
                     </section>
 
                     <section className="character-attributes">
                         <ul className="attribute-list">
                             {characterSheet.attributes.map(attribute => {
                                 return <li>
-                                    <div className="attribute-name">{attribute.attributeNameHe}</div>
-                                    <div className="attribute-value">{attribute.attributeValue}</div>
-                                    <div className="attribute-mod">{dndFormulas.calcAttributeModifier(attribute.attributeValue)}</div>
+                                    <div class='shield-top'>
+                                        <div className="attribute-name">{attribute.attributeNameHe}</div>
+                                    </div>
+                                    <div class='shield-middle'>
+                                        <div className="attribute-value">{attribute.attributeValue}</div>
+                                        <div className="attribute-mod">{dndFormulas.calcAttributeModifier(attribute.attributeValue)}</div>
+                                    </div>
+                                        <div className='shield-bottom'>
+                                    </div>
+
                                 </li>
                             })}
                         </ul>
@@ -62,7 +100,16 @@ export default function CharacterSheet() {
                     <section className="character-stasuses">
                         <div className="defensive-stats">
                             <div className="hitpoints">
-                                נקודות פגיעה: {characterSheet.hitPoints}
+                                <div className="hitpoint-title">
+                                    נקודות פגיעה: 
+                                </div>
+                                <div className="hitpoint-number">
+                                {currHitPoints}/{characterSheet.hitPoints}
+                                </div>
+                                <div className="hitPoint-bar">
+                                    {/* {characterSheet.hitPoints.forEach(hitPoint => {
+                                    })} */}
+                                </div>
                             </div>
                             <div className="hitpoints">
                                 ערך הגנתי: {characterSheet.armorClass}

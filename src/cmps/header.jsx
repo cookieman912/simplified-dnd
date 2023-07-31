@@ -4,22 +4,23 @@ export default function Header() {
 
     return (
         <header className="main-header">
-            <div className="title-container">
-                <p className="main-title">מבוכים ודרקונים</p>
-                <p className="secondary title">הגרסה המפושטת</p>
+            <div className="header-container">
+                <div className="title-container">
+                    <p className="main-title">מבוכים ודרקונים</p>
+                    <p className="secondary title">הגרסה המפושטת</p>
+                </div>
+
+                <nav className="main-nav">
+                    <ul>
+                        <li>
+                            <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to={'/characters'}>דמויות</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to={'/'}>בית</NavLink>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-
-            <nav className="main-nav">
-                <ul>
-                    <li>
-                        <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to={'/characters'}>דמויות</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to={'/'}>בית</NavLink>
-                    </li>
-                </ul>
-            </nav>
-
         </header>
     )
 }

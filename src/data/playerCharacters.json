@@ -1,111 +1,123 @@
-[{
-    "id" : 0,
-    "name" : "הלוחם",
+[
+    {
+        "id": 0,
+        "name": "סר לורה",
+        "class": "לוחם",
+        "level": 1,
+        "background": "חייל",
+        "attributes": [
+            {
+                "attributeNameEn": "Strength",
+                "attributeValue": 18,
+                "attributeNameHe": "עוצמה"
+            },
+            {
+                "attributeNameEn": "Dexterity",
+                "attributeValue": 14,
+                "attributeNameHe": "זריזות"
+            },
+            {
+                "attributeNameEn": "Constitution",
+                "attributeValue": 16,
+                "attributeNameHe": "חוסן"
+            },
+            {
+                "attributeNameEn": "Intelligence",
+                "attributeValue": 13,
+                "attributeNameHe": "חוכמה"
+            },
+            {
+                "attributeNameEn": "Wisdom",
+                "attributeValue": 10,
+                "attributeNameHe": "תבונה"
+            },
+            {
+                "attributeNameEn": "Charisma",
+                "attributeValue": 12,
+                "attributeNameHe": "כריזמה"
+            }
+        ],
+        "hitDie": 10,
+        "hitPoints": 39,
+        "armorClass": 18,
+        "attacks": [
+            {
+                "name": "חנית הנהר הפורץ",
+                "attackRollBonus": 5,
+                "dieValue": 6,
+                "dieAmount": 2,
+                "damageType": "slashing",
+                "modifierAttribute": "Strength"
+            },
+            {
+                "name": "פילאם",
+                "attackRollBonus": 3,
+                "dieValue": 8,
+                "dieAmount": 1,
+                "damageType": "slashing",
+                "modifierAttribute": "Dexterity"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "ארתון",
+        "class": "יסודאי",
+        "level": 1,
+        "background": "אקדמאי",
 
-    "attributes" : [
-        {   "attributeNameEn" : "Strength",
-            "attributeValue" : 18,
-            "attributeNameHe" : "עוצמה"
-        },
-        {   "attributeNameEn" : "Dexterity",
-        "attributeValue" : 14,
-        "attributeNameHe" : "זריזות"
-        },
-        {   "attributeNameEn" : "Constitution",
-        "attributeValue" : 16,
-        "attributeNameHe" : "חוסן"
-        },
-        {   "attributeNameEn" : "Intelligence",
-        "attributeValue" : 13,
-        "attributeNameHe" : "חוכמה"
-        },
-        {   "attributeNameEn" : "Wisdom",
-        "attributeValue" : 10,
-        "attributeNameHe" : "תבונה"
-        },
-        {   "attributeNameEn" : "Charisma",
-        "attributeValue" : 12,
-        "attributeNameHe" : "כריזמה"
-        }
-    ],
-
-    "hitDie": 10,
-    "hitPoints": 39,
-    "armorClass": 18,
-
-    "attacks": [
-        {
-            "name":"חנית הנהר הפורץ",
-            "attackRollBonus": 5,
-            "dieValue": 6,
-            "dieAmount": 2,
-            "damageType": "slashing",
-            "modifierAttribute" : "Strength"
-        },
-        {
-            "name":"פילאם",
-            "attackRollBonus": 3,
-            "dieValue": 8,
-            "dieAmount": 1,
-            "damageType": "slashing",
-            "modifierAttribute" : "Dexterity"
-        }
-    
-    ]
-},
-{
-    "id" : 1,
-    "name" : "היסודאי",
-
-    "attributes" : [
-        {   "attributeNameEn" : "Strength",
-            "attributeValue" : 8,
-            "attributeNameHe" : "עוצמה"
-        },
-        {   "attributeNameEn" : "Dexterity",
-        "attributeValue" : 12,
-        "attributeNameHe" : "זריזות"
-        },
-        {   "attributeNameEn" : "Constitution",
-        "attributeValue" : 14,
-        "attributeNameHe" : "חוסן"
-        },
-        {   "attributeNameEn" : "Intelligence",
-        "attributeValue" : 18,
-        "attributeNameHe" : "חוכמה"
-        },
-        {   "attributeNameEn" : "Wisdom",
-        "attributeValue" : 16,
-        "attributeNameHe" : "תבונה"
-        },
-        {   "attributeNameEn" : "Charisma",
-        "attributeValue" : 12,
-        "attributeNameHe" : "כריזמה"
-        }
-    ],
-    "hitDie": 10,
-    "hitPoints": 39,
-    "armorClass": 18,
-
-    "attacks": [
-        {
-            "name":"כדור אש",
-            "attackRollBonus": 5,
-            "dieValue": 6,
-            "dieAmount": 2,
-            "damageType": "slashing",
-            "modifierAttribute" : "Intelligence"
-        },
-        {
-            "name":"רוח מרפא",
-            "attackRollBonus": 3,
-            "dieValue": 8,
-            "dieAmount": 1,
-            "damageType": "slashing",
-            "modifierAttribute" : "Wisdom"
-        }
-    
-    ]
-}
-
+        "attributes": [
+            {
+                "attributeNameEn": "Strength",
+                "attributeValue": 8,
+                "attributeNameHe": "עוצמה"
+            },
+            {
+                "attributeNameEn": "Dexterity",
+                "attributeValue": 12,
+                "attributeNameHe": "זריזות"
+            },
+            {
+                "attributeNameEn": "Constitution",
+                "attributeValue": 14,
+                "attributeNameHe": "חוסן"
+            },
+            {
+                "attributeNameEn": "Intelligence",
+                "attributeValue": 18,
+                "attributeNameHe": "חוכמה"
+            },
+            {
+                "attributeNameEn": "Wisdom",
+                "attributeValue": 16,
+                "attributeNameHe": "תבונה"
+            },
+            {
+                "attributeNameEn": "Charisma",
+                "attributeValue": 12,
+                "attributeNameHe": "כריזמה"
+            }
+        ],
+        "hitDie": 10,
+        "hitPoints": 39,
+        "armorClass": 18,
+        "attacks": [
+            {
+                "name": "כדור אש",
+                "attackRollBonus": 5,
+                "dieValue": 6,
+                "dieAmount": 2,
+                "damageType": "slashing",
+                "modifierAttribute": "Intelligence"
+            },
+            {
+                "name": "רוח מרפא",
+                "attackRollBonus": 3,
+                "dieValue": 8,
+                "dieAmount": 1,
+                "damageType": "slashing",
+                "modifierAttribute": "Wisdom"
+            }
+        ]
+    }
 ]

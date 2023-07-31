@@ -1,6 +1,8 @@
 // Variables
 $background_black : rgb(50, 50, 50);
 $simplified_red : rgb(111, 21, 21);
+$background_void : rgb(30, 30, 30);
+$main_border_color : rgb(255,255,255);
 
 // Fonts
 @font-face {
@@ -15,13 +17,13 @@ $simplified_red : rgb(111, 21, 21);
 
 // General, app-wide styling
 * {
-    direction: ltr;
+    direction: rtl;
     font-family: 'hebrew-font, english-font';
     font-size: 18px;
 }
 
 body {
-    background-color: $background_black ;
+    background-color: $background_void ;
     color: white;
 }
 
@@ -32,3 +34,4 @@ body {
 
 // components
 @import  './cmps/header.scss';
+@import './cmps/character-sheet.scss'

@@ -1,0 +1,114 @@
+.character-cards {
+    .character-general-info {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        border: 2px solid $main_border_color;
+        padding: 15px;
+        border-radius: 1em;
+
+        p {
+            font-weight: 300;
+            margin: 0px;
+            margin-block-end: 10px;
+        }
+
+        input {
+            background-color: black;
+            padding: 5px;
+            color: white;
+            border: 2px solid $main_border_color;
+            border-radius: 0.8em;
+        }
+
+        input:focus {
+            color: $simplified_red;
+            border: 2px solid $simplified_red;
+        }
+    }
+
+    .character-attributes {
+        .attribute-list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: 10px;
+            padding-inline-start: 0px;
+
+            li {
+                list-style-type: none;
+                text-align: center ;
+                height: 215px;
+                width: 160px;
+
+                .shield-top {
+                    width: 150px;
+                    height: 40px;
+                    background: $background_black;
+                    border-color: $main_border_color;
+                    -moz-border-radius: 100px / 100px;
+                    -webkit-border-radius: 100px / 100px;
+                    border-radius: 75px / 20px;
+                    z-index: 100;
+                    border: 1px solid $main_border_color;
+                    position: relative;
+                }
+
+                .shield-middle {
+                    width: 150px;
+                    height: 85px;
+                    background: $background_black;
+                    border-color: $main_border_color;
+                    margin-top: -20px;
+                    z-index: 100;
+                    border: 1px solid $main_border_color;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    border-bottom: 0px;
+
+                    .attribute-value {
+                        font-size: 1.3em;
+                        border-bottom: 1px solid white;
+                    }
+
+                    .attribute-mod {
+                        position: relative;
+                        padding: 10px;
+                        width:  40px;
+                        height: 60px;
+                        border: 1px solid white;
+                        border-radius: 100%;
+                        top: 32px;
+                        left: -43px;
+                        font-size: 1.3em;
+                    }
+
+                }
+
+                .shield-bottom {
+                    transform: rotate(135deg);
+                    -ms-transform: rotate(135deg); /* IE 9 */
+                    -webkit-transform: rotate(135deg); /* Safari and Chrome */
+                    -o-transform: rotate(135deg); /* Opera */
+                    -moz-transform: rotate(135deg); /* Firefox */
+                    background-color:$background_black;
+                    border-color: $main_border_color;
+                    width:136px;
+                    height:135px;
+                    position:relative;
+                    margin-left: 357.5px;
+                    margin-top: 115px;
+                    top: -183px;
+                    right: 7px;
+                    -webkit-border-radius: 50px 10px 50px 50px;
+                    -moz-border-radius: 50px 10px 50px 50px;
+                    border-radius: 50px 10px 50px 50px;
+                    border: 1px solid $main_border_color;
+                }
+            }
+        }
+    }
+}
